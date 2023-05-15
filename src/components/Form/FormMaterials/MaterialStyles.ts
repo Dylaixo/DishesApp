@@ -25,6 +25,7 @@ export const useButtonStyles = makeStyles({
     fontWeight: 'bold',
     color: 'white',
     marginTop: 80,
+    marginBottom: 40,
     '&:hover': {
       backgroundColor: 'blue',
     },
