@@ -18,9 +18,7 @@ function Cards() {
                 />
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
-                        This impressive paella is a perfect party dish and a fun meal to cook
-                        together with your guests. Add 1 cup of frozen peas along with the mussels,
-                        if you like.
+                        Everyone loves pizza! Create your own pizza size, choose its diameters and the number of slices that can be used to define your dream pizza.
                     </Typography>
                 </CardContent>
             </Card>
@@ -33,9 +31,7 @@ function Cards() {
                 />
                 <CardContent >
                     <Typography variant="body2" color="text.secondary">
-                        This impressive paella is a perfect party dish and a fun meal to cook
-                        together with your guests. Add 1 cup of frozen peas along with the mussels,
-                        if you like.
+                        Want to eat something hot? Create your soup and add a level of spiciness to it.
                     </Typography>
                 </CardContent>
             </Card>
@@ -48,9 +44,7 @@ function Cards() {
                 />
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
-                        This impressive paella is a perfect party dish and a fun meal to cook
-                        together with your guests. Add 1 cup of frozen peas along with the mussels,
-                        if you like.
+                        Want to eat something small and light? You can create your own sandwich that requires a number of slices of bread.
                     </Typography>
                 </CardContent>
             </Card>
