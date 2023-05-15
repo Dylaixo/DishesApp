@@ -1,0 +1,25 @@
+.dots {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    display: block;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.dot {
+    width: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.prep {
+    width: 200px !important;
+}

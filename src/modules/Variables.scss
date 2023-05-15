@@ -1,0 +1,16 @@
+@mixin headerText {
+    text-align: center;
+    color: steelblue;
+    font-family: 'Wix Madefor Text', sans-serif;
+    font-style: italic;
+}
+
+@mixin background {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("https://www.foodserviceequipmentjournal.com/2017/08/open-kitchen.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

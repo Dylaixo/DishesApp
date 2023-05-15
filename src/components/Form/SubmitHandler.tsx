@@ -1,4 +1,3 @@
-import { Dispatch } from "react";
 import { SubmissionError } from "redux-form";
 import { validateData } from "./validationFunc";
 import { DataValues } from "./interfaces";

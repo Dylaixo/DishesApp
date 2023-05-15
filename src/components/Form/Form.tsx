@@ -10,6 +10,7 @@ import PizzaOptions from './FormOptions/PizzaOptions';
 import { FormData } from './interfaces';
 import handleSubmit from './SubmitHandler';
 import { Button, DialogContent, DialogContentText } from '@mui/material';
+import FormStyles from '../../modules/Form.module.scss'
 
 const DisplayForm: FC<InjectedFormProps<FormData>> = (props) => {
   const { handleSubmit, error } = props;
@@ -43,16 +44,19 @@ const DisplayForm: FC<InjectedFormProps<FormData>> = (props) => {
   }
 
   return (
+
     <DialogContent>
       <DialogContentText>
         Write your food informations!
       </DialogContentText>
       <form onSubmit={handleSubmit} >
         <Field name="name" error={error} label='Name of the dish' component={renderField} type="text" />
-        <Field sticky="true" name="preparation_time" error={error} label='Preparation time' component={renderField} type="time" step="1" />
-        <Field name="type" onChange={handleChange} component={renderField} label="Pizza" type="radio" value="pizza" />
-        <Field name="type" onChange={handleChange} component={renderField} label="Soup" type="radio" value="soup" />
-        <Field name="type" onChange={handleChange} component={renderField} label="Sandwich" type="radio" value="sandwich" />
+        <Field className={FormStyles.prep} sticky="true" name="preparation_time" error={error} label='Preparation time' component={renderField} type="time" step="1" />
+        <div className={FormStyles.dots} >
+          <Field sticky="true" name="type" onChange={handleChange} component={renderField} label="Pizza" type="radio" value="pizza" />
+          <Field sticky="true" name="type" onChange={handleChange} component={renderField} label="Soup" type="radio" value="soup" />
+          <Field sticky="true" name="type" onChange={handleChange} component={renderField} label="Sandwich" type="radio" value="sandwich" />
+        </div>
         {isClicked ? options : null}
         <Button type='submit'>Submit</Button>
       </form>

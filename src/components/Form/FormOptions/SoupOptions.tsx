@@ -1,36 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Field } from 'redux-form';
 import renderField from '../FormMaterials/Field';
-import { Slider } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
+import { spiceActions } from '../../../store/spice-slice';
 
 const SoupOptions = () => {
-  const [spiceLevel, setSpiceLevel] = useState('');
+  //Defining states in component
+  const spiceLv = useSelector((state: any) => state.spice.spiceLv);
+  const showLv = useSelector((state: any) => state.spice.showLv)
+  const dispatch = useDispatch();
 
+  //Showing up the text about spiciness scale
   function handleChangeRange(event: React.ChangeEvent<HTMLInputElement>) {
-    let spice = parseInt(event.target.value) * 0.1;
+    let spice = Math.round(parseInt(event.target.value) * 0.1);
     console.log(spice)
-    switch (true) {
-      case spice >= 0 && spice <= 3:
-        console.log('od 0 do 30')
-        setSpiceLevel('malo ostre');
-        break;
-      case spice > 3 && spice <= 7:
-        console.log('od 30 do 70')
-        setSpiceLevel('Troche ostre');
-        break;
-      case spice > 7 && spice <= 10:
-        console.log('od 70 do 100')
-        setSpiceLevel('ALE OSTRE');
-        break;
-      default:
-        console.log('o')
-    }
+    dispatch(spiceActions.spiceLevel(spice))
+    dispatch(spiceActions.showSpiceLevel())
   }
 
   return (
     <>
       <Field sticky="true" onChange={handleChangeRange} name="spiciness_scale" component={renderField} label="Spiciness scale" type="range" value="spiciness_scale" min="0" max="10" />
-      {spiceLevel && <p>{spiceLevel}</p>}
+      {showLv ? <p>Your dish is {spiceLv}/10 spicy!</p> : null}
     </>
   );
 }

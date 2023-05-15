@@ -1,30 +1,33 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
 import DisplayFrom from '../Form/Form';
+import { useDispatch, useSelector } from 'react-redux';
+import { popupActions } from '../../store/popup-slice';
+import { Box, Button, Dialog, DialogTitle } from '@mui/material';
+import { useButtonStyles } from '../Form/FormMaterials/MaterialStyles';
 
 export default function Content() {
-  const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  //Defining states in component
+  const popup = useSelector((state: any) => state.popup.showPopup);
+  const dispatch = useDispatch();
 
+  //Opening popup window with form
+  function handleClickOpen() {
+    dispatch(popupActions.change());
+  }
+  //Closing popup window with form
   const handleClose = () => {
-    setOpen(false);
+    dispatch(popupActions.change());
   };
-
+  //Custom classes for Material UI
+  const classes = useButtonStyles()
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Create your own dish!
-      </Button>
-      <Dialog open={open} onClose={handleClose} >
+      <Box sx={{ justifyContent: 'center', display: 'flex' }}>
+        <Button className={classes.button} variant="outlined" onClick={handleClickOpen}>
+          Create your own dish!
+        </Button>
+      </Box>
+      <Dialog open={popup} onClose={handleClose} >
         <DialogTitle>Dishes</DialogTitle>
         <DisplayFrom />
       </Dialog>

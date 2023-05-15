@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const popupSlice = createSlice({
   name: 'popup',
-  initialState: { isClicked: false },
+  initialState: { showPopup: false },
   reducers: {
-    change: (state, action) => {
-      state.isClicked = !state.isClicked;
-    },
+    change: (state) => {
+      state.showPopup = !state.showPopup;
+    }
   },
 });
+
 export const popupActions = popupSlice.actions;
 
 export default popupSlice;

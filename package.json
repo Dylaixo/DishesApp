@@ -22,6 +22,7 @@
     "react-redux": "^8.0.5",
     "react-scripts": "5.0.1",
     "redux-form": "^8.3.10",
+    "sass": "^1.62.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -51,6 +52,9 @@
   },
   "devDependencies": {
     "@types/material-ui": "^0.21.12",
-    "@types/redux-form": "^8.3.5"
+    "@types/redux-form": "^8.3.5",
+    "postcss-loader": "^7.3.0",
+    "resolve-url-loader": "^5.0.0",
+    "sass-loader": "^13.2.2"
   }
 }

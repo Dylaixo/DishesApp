@@ -5,7 +5,7 @@ import renderField from '../FormMaterials/Field';
 const SandwichOptions = () => {
     return (
         <>
-            <Field name="slices_of_bread" component={renderField} label="Number of bread slices" type="number" value="slices_of_bread" />
+            <Field styles="sandwich" name="slices_of_bread" component={renderField} label="Number of bread slices" type="number" value="slices_of_bread" />
         </>
     );
 }

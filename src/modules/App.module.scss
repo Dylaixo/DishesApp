@@ -1,0 +1,27 @@
+@import './Variables.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,500;1,500&display=swap');
+
+.root {
+    @include background;
+
+    .content {
+        flex: 1;
+        background-color: rgba(255, 255, 255, 0.6);
+
+        .header {
+            @include headerText;
+            padding: 3% 5% 1% 5%;
+            font-size: 4.5rem;
+        }
+
+        .smallHeader {
+            @include headerText;
+            font-size: 2.5rem;
+        }
+    }
+}
+
+.btn {
+    width: 400px;
+}

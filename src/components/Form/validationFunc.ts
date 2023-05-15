@@ -27,7 +27,7 @@ export const validateData = (data: DataValues) => {
     errors.name = 'Name must have at least 3 characters'
   }
 
-  //Name of dish validation
+  //Type and option fields validation
   if (!data.type) {
     errors.type = 'Choose one option';
   }
@@ -40,17 +40,15 @@ export const validateData = (data: DataValues) => {
   if (data.type === 'pizza' && !data.no_of_slices) {
     errors.no_of_slices = 'Number of slices is required';
   }
-  if (!data.type) {
-    errors.type = 'Choose one option';
-  }
-  if (!data.preparation_time) {
-    errors.preparation_time = 'Preparation time is required';
-  }
   if (data.type === 'pizza' && !data.diameter) {
     errors.diameter = 'Diameter is required';
   }
   if (data.type === 'pizza' && data.diameter && data.diameter.toString().split('.')[1]?.length > 2) {
     errors.diameter = 'Preparation time must have at most 2 decimal places';
+  }
+  // Preparation time validation
+  if (!data.preparation_time) {
+    errors.preparation_time = 'Preparation time is required';
   }
   if (Object.keys(errors).length > 0) {
     throw new SubmissionError(errors);
