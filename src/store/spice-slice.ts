@@ -14,6 +14,5 @@ const spiceSlice = createSlice({
 });
 
 export const spiceActions = spiceSlice.actions;
-export const spiceReducer = spiceSlice.reducer; // Dodaj wyeksportowanie reduktora
-
-export default spiceSlice; // Usuń wyeksportowanie poprzedniego reduktora
+export const spiceReducer = spiceSlice.reducer;
+export default spiceSlice; 
